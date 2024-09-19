@@ -23,7 +23,7 @@ The Task Management Dashboard is a React application designed to help users mana
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/task-management-dashboard.git
+   git clone https://github.com/jimmyurl/task-management-dashboard.git
    ```
 
 2. **Navigate to the Project Directory**
