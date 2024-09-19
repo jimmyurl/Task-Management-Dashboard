@@ -101,5 +101,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For any questions or issues, please contact:
 
-- **Your Name**: [jimmy.james365@gmail.com](mailto:jimmy.james365@gmail.com)
+- **My Email**: [jimmy.james365@gmail.com](mailto:jimmy.james365@gmail.com)
 
