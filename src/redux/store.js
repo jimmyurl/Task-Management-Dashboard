@@ -1,5 +1,7 @@
+import {thunk} from 'redux-thunk';
+
+// Then apply the middleware in the store configuration:
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import taskReducer from './reducers/taskReducer';
 
 const store = createStore(
