@@ -1,18 +1,52 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import TaskList from '../components/TaskList';
-import TaskForm from '../components/TaskForm';
+import { Box, CssBaseline, Drawer, AppBar, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 
-const Dashboard = () => {
-  const tasks = useSelector(state => state.tasks);
+const drawerWidth = 240;
 
+function Dashboard() {
   return (
-    <div>
-      <h1>Task Management Dashboard</h1>
-      <TaskForm />
-      <TaskList tasks={tasks} />
-    </div>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
+            Task Management Dashboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      {/* Sidebar */}
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box' },
+        }}
+        variant="permanent"
+        anchor="left"
+      >
+        <Toolbar />
+        <List>
+          {['Tasks', 'Teams', 'Settings'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+
+      {/* Main Content Area */}
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
+        <Toolbar />
+        <Typography paragraph>
+          This is where your task management data will go!
+        </Typography>
+      </Box>
+    </Box>
   );
-};
+}
 
 export default Dashboard;
